@@ -1,0 +1,20 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <div class="container pt-5 homepage">
+        <div class="row">
+            <div class="col-lg-3">
+                {% include 'main/index/_sidebar.html' %}
+            </div>
+            <div class="col-lg-9">
+                {% include 'main/index/_last_post.html' %}
+
+                {% include 'main/index/_products.html' %}
+            </div>
+        </div>
+
+        {% include 'main/index/_last_products.html' %}
+
+        {% include 'main/index/_last_post_bottom.html' %}
+    </div>
+{% endblock %}

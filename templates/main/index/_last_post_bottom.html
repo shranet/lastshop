@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="d-flex mt-5 mb-3">
+        <div class="font-weight-bold text-secondary">Read our Blog posts</div>
+
+        <a href="#" class="font-weight-bold text-secondary ml-auto">Go Blog
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.5332 11.1866L9.2732 8.44663C9.39737 8.32172 9.46706 8.15276 9.46706 7.97663C9.46706 7.80051 9.39737 7.63154 9.2732 7.50663L6.60654 4.83997" stroke="#6A983C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="bevel"/>
+            </svg>
+        </a>
+    </div>
+
+    {% load static %}
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="post-large cover-img rounded p-4 d-flex flex-column" style="background-image: url('{% static 'img/post.png' %}')">
+                <div class="tags">
+                    <small class="badge badge-primary">Dinner rips</small>
+                    <small class="badge badge-primary">Best dinner</small>
+                    <small class="badge badge-primary">No</small>
+                    <small class="badge badge-primary">Yes</small>
+                </div>
+                <div class="mt-auto">
+                    <a href="#" class="text-white font-weight-bold title">Our chef tips for a great and tasty dinner ready in 20 minutes</a>
+                    <div class="d-flex text-white align-items-center mt-2">
+                        <a href="#" class="rounded-circle cover-img author d-inline-block mr-2" style="background-image: url('{% static 'img/product.jpg' %}')"></a>
+                        Author
+                        <span class="ml-4">26.03.2021</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 mt-4 mt-lg-0">
+            <div class="post-middle">
+                <div class="cover-img img rounded"  style="background-image: url('{% static 'img/post.png' %}')"></div>
+                <div class="tags py-2">
+                    <small class="badge badge-primary">Dinner rips</small>
+                    <small class="badge badge-primary">Best dinner</small>
+                </div>
+                <a href="#" class="text-secondary title">Our chef tips for a great and tasty dinner ready in 20 minutes</a>
+                <div class="d-flex text-secondary align-items-center mt-2">
+                    <a href="#" class="rounded-circle border cover-img author d-inline-block mr-2" style="background-image: url('{% static 'img/product.jpg' %}')"></a>
+                    Author
+                    <span class="ml-4">26.03.2021</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-4 mt-5 mt-lg-0">
+            {% load helpers %}
+            {% repeat "Post" 3 as last_post %}
+            {% for n in last_post %}
+            <div class="post-small mb-4 d-flex">
+                <div class="flex-grow-1">
+                    <a href="#" class="text-secondary font-weight-bold">
+                        Salat is kinda good start to your morning routines
+                    </a>
+
+                    <div class="d-flex text-secondary align-items-center mt-2">
+                        <a href="#" class="rounded-circle border cover-img author d-inline-block mr-2" style="background-image: url('{% static 'img/product.jpg' %}')"></a>
+                        Author
+                        <span class="ml-4">26.03.2021</span>
+                    </div>
+                </div>
+
+                <div class="cover-img img rounded"  style="background-image: url('{% static 'img/post.png' %}')"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

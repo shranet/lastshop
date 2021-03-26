@@ -1,0 +1,8 @@
+{% load static %}
+<div class="row">
+    {% for p in products %}
+    <div class="col-lg-4 col-6 mt-5">
+        {% include 'include/_product.html' %}
+    </div>
+    {% endfor %}
+</div>

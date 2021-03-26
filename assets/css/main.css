@@ -1,0 +1,132 @@
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.text-primary {
+    color: #6A983C !important;
+}
+
+.text-secondary {
+    color: #151515 !important;
+}
+
+.btn-outline-primary {
+    border-color: #6A983C !important;
+    border-width: 3px !important;
+}
+
+.badge-primary,
+.btn-primary,
+.btn-outline-primary:focus,
+.btn-outline-primary:hover {
+    background: #6A983C !important;
+    color: #fff !important;
+}
+
+.btn-primary {
+    border-color: #6A983C !important;
+}
+
+.btn-secondary {
+    background: #F5F5F5 !important;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.header {
+    height: 48px;
+    border-bottom: 1px solid rgba(21, 21, 21, 0.05);
+}
+
+.search-form {
+    border: 1px solid #D1D1D1 !important;
+}
+
+
+.search-form,
+.search-form input,
+.search-form input:focus {
+    background: #F9F9F9;
+    outline: 0 none !important;
+}
+
+.search-form .input-group-prepend:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: #D1D1D1;
+    z-index: 1;
+}
+
+.header-icons a {
+    font-size: 1.5rem;
+}
+
+.header span,
+.header-icons span {
+    left: -5px;
+    bottom: -5px;
+    font-size: 0.6rem;
+}
+
+.homepage h2,
+.homepage h3 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.homepage h2 {
+    font-size: 22px;
+    line-height: 33px;
+}
+
+.post {
+    background: url("../img/post-pattern.png") 50% 50% no-repeat;
+    background-size: cover;
+    height: 280px;
+}
+
+.cover-img,
+.product .img {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.product .img {
+    height: 180px;
+}
+
+.post-large {
+    height: 400px;
+}
+
+.post-small .author,
+.post-middle .author,
+.post-large .author {
+    height: 32px;
+    width: 32px;
+}
+
+.post-middle .title,
+.post-large .title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+}
+
+.post-middle .img {
+    padding-top: 70%;
+}
+
+.post-small .img {
+    height: 100px;
+    min-width: 100px;
+}

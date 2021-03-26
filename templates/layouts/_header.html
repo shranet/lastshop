@@ -1,0 +1,75 @@
+{% load static %}
+<div class="container">
+    <div class="header d-flex align-items-center text-nowrap">
+        <a href="#" class="text-primary">Chat with us</a>
+        <a href="#" class="ml-2 ml-lg-5 text-secondary d-none d-lg-block">+998 (97) 123-45-67</a>
+        <a href="#" class="ml-2 ml-lg-5 text-secondary d-none d-lg-block">best@mail.uz</a>
+
+        <a href="#" class="ml-auto text-primary">Blog</a>
+        <a href="#" class="ml-2 ml-lg-5 text-primary">About us</a>
+        <a href="#" class="ml-2 ml-lg-5 text-primary">Careers</a>
+
+        <div class="d-block d-lg-none ml-2">
+            {% include 'layouts/_icons.html' %}
+        </div>
+    </div>
+</div>
+
+<div class="container header-search py-3 py-lg-5">
+    <div class="row">
+        <div class="col-lg-3 text-center text-lg-left pb-3 pb-lg-0">
+            <img src="{% static 'img/logo.png' %}" alt="Logo" />
+        </div>
+        <div class="col-lg-6 text-center">
+            <div class="input-group search-form rounded">
+                <div class="input-group-prepend position-relative">
+                     <a href="#" data-toggle="dropdown" class="dropdown-toggle btn">All categories</a>
+                    <div class="dropdown-menu">
+                        {% for category in categories %}
+                        <a href="#" class="dropdown-item">{{ category }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <input type="text" class="px-4 form-control border-0 shadow-none" placeholder="Search Products, categories ..." />
+
+                <div class="input-group-append">
+                    <button type="submit" class="btn">
+                        <i class="bi-search text-secondary"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 text-right header-icons d-none d-lg-block">
+            {% include 'layouts/_icons.html' %}
+        </div>
+    </div>
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            </ul>
+      </div>
+    </div>
+</nav>
