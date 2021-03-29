@@ -1,4 +1,4 @@
-{% for menu in sidebar_menu %}
+{% for menu in sidebar_menu|slice:3 %}
     <h3 class="text-secondary text-center text-lg-left">{{ menu.name }}</h3>
 
     <div class="sidebar-links">

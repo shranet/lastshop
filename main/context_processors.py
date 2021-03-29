@@ -15,7 +15,8 @@ def load_categories(request):
 
     return {
         'categories': categories,
-        'category_children': children
+        'category_children': children,
+        'bottom_links': Category.objects.filter(on_sidebar=True).order_by('on_sidebar_order').all()[3:7]
     }
 
 
@@ -23,5 +24,3 @@ def load_settings(request):
     return {
         'setting_{}'.format(item.key): item.value for item in Setting.objects.all()
     }
-
-#
