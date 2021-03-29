@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Unit, Category, PromoCode, Setting
+from .models import Unit, Category, PromoCode, Setting, Post
 from client.models import User
 
 
@@ -98,3 +98,19 @@ class SettingAdmin(admin.ModelAdmin):
         model = Setting
 
 admin.site.register(Setting, SettingAdmin)
+
+
+class PostAdmin(admin.ModelAdmin):
+    list_display = [
+        'id',
+        'subject',
+    ]
+
+    def subject(self, row):
+        return row.subject
+
+    class Meta:
+        model = Post
+
+
+admin.site.register(Post, PostAdmin)

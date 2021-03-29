@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
-from .models import Category, Setting
+from django.views.generic import TemplateView, DetailView
+from .models import Category, Setting, Post
 
 
 class MainIndex(TemplateView):
@@ -18,3 +18,20 @@ class MainIndex(TemplateView):
 
 class MainCategory(TemplateView):
     template_name = 'main/category.html'
+
+
+class MainPageRead(DetailView):
+    post_id = None
+    model = Post
+    template_name = 'main/page.html'
+
+    def get_object(self, queryset=None):
+        if self.post_id is None:
+            return super().get_object(queryset)
+
+        return Post.objects.get(id=self.post_id)
+
+
+
+
+

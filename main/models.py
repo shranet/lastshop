@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import get_language
+from lastshop.helpers import upload_file_name
 
 
 class TranslateHelperMixin:
@@ -112,14 +113,24 @@ class Setting(models.Model):
         verbose_name_plural = 'Sozlashlar'
 
 
-class Post(models.Model):
+class Post(models.Model, TranslateHelperMixin):
+    STATUSES = (
+        (1, 'Faol'),
+        (0, 'Nofaol')
+    )
+
+    upload_folder = "post"
+
+    user = models.ForeignKey('client.User', on_delete=models.RESTRICT, default=None)
     subject_uz = models.CharField(max_length=100)
     subject_ru = models.CharField(max_length=100)
     content_uz = models.TextField()
     content_ru = models.TextField()
-    photo = models.ImageField()
-    status = models.SmallIntegerField()
+    photo = models.ImageField(upload_to=upload_file_name)
+    status = models.SmallIntegerField(choices=STATUSES, default=1)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    translate_fields = ['subject', 'content']
 
     class Meta:
         verbose_name = 'Maqola'

@@ -146,3 +146,7 @@ LANGUAGES = (
 INTERNAL_IPS = [
     '127.0.0.1'
 ]
+
+MEDIA_URL = '/upload/'
+
+MEDIA_ROOT = BASE_DIR / 'upload'

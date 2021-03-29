@@ -6,8 +6,8 @@
         <a href="mailto:{{ setting_email }}" class="ml-2 ml-lg-5 text-secondary d-none d-lg-block">{{ setting_email }}</a>
 
         <a href="#" class="ml-auto text-primary">Blog</a>
-        <a href="#" class="ml-2 ml-lg-4 text-primary">About us</a>
-        <a href="#" class="ml-2 ml-lg-4 text-primary">Careers</a>
+        <a href="{% url 'main:about' %}" class="ml-2 ml-lg-4 text-primary">{% trans "Biz haqimizda" %}</a>
+        <a href="{% url 'main:contact' %}" class="ml-2 ml-lg-4 text-primary">{% trans "Bog'lanish" %}</a>
 
         <div class="d-block d-lg-none ml-2">
             {% include 'layouts/_icons.html' %}
@@ -18,7 +18,9 @@
 <div class="container header-search py-3 py-lg-5">
     <div class="row">
         <div class="col-lg-3 text-center text-lg-left pb-3 pb-lg-0">
-            <img src="{% static 'img/logo.png' %}" alt="Logo" />
+            <a href="{% url 'main:index' %}">
+                <img src="{% static 'img/logo.png' %}" alt="Logo" />
+            </a>
         </div>
         <div class="col-lg-6 text-center">
             <div class="input-group search-form rounded">
