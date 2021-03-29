@@ -1,4 +1,4 @@
-{% load static helpers %}
+{% load static helpers i18n %}
 <div class="container">
     <div class="header d-flex align-items-center text-nowrap">
         <a href="#" class="text-primary">Chat with us</a>
@@ -6,8 +6,8 @@
         <a href="mailto:{{ setting_email }}" class="ml-2 ml-lg-5 text-secondary d-none d-lg-block">{{ setting_email }}</a>
 
         <a href="#" class="ml-auto text-primary">Blog</a>
-        <a href="#" class="ml-2 ml-lg-5 text-primary">About us</a>
-        <a href="#" class="ml-2 ml-lg-5 text-primary">Careers</a>
+        <a href="#" class="ml-2 ml-lg-4 text-primary">About us</a>
+        <a href="#" class="ml-2 ml-lg-4 text-primary">Careers</a>
 
         <div class="d-block d-lg-none ml-2">
             {% include 'layouts/_icons.html' %}
@@ -26,7 +26,7 @@
                      <a href="#" data-toggle="dropdown" class="dropdown-toggle btn">All categories</a>
                     <div class="dropdown-menu">
                         {% for category in categories %}
-                        <a href="#" class="dropdown-item">{{ category }}</a>
+                        <a href="#" class="dropdown-item">{{ category.name }}</a>
                         {% endfor %}
                     </div>
                 </div>
@@ -58,7 +58,7 @@
             {% for category in categories %}
                 {% if category_children|get_item:category.id  %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown">
                             {{ category.name }}
                         </a>
                         <div class="dropdown-menu">
