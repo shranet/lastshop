@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'main',
+    'client',
+    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -48,6 +50,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 ROOT_URLCONF = 'lastshop.urls'
@@ -65,6 +69,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'main.context_processors.load_settings',
+                'main.context_processors.load_categories'
             ],
         },
     },
@@ -78,8 +84,10 @@ WSGI_APPLICATION = 'lastshop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'lastshop',
+        'USER': 'root',
+        'PASSWORD': 'Qwerty123$'
     }
 }
 
@@ -126,4 +134,15 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'assets'
+]
+
+AUTH_USER_MODEL = 'client.User'
+
+LANGUAGES = (
+    ('uz', "O'zbek"),
+    ('ru', "Русский")
+)
+
+INTERNAL_IPS = [
+    '127.0.0.1'
 ]

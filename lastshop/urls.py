@@ -14,18 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf.urls.i18n import i18n_patterns
 from django.views.generic import TemplateView
+import debug_toolbar
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(
-        template_name='main/index.html',
-        extra_context={
-            'categories': ["Category {}".format(k) for k in range(0, 20)],
-            'side_categories': ["Category {}".format(k) for k in range(0, 3)],
-            'products': [k for k in range(6)]
-        }
-    ))
+    path('__debug__', include(debug_toolbar.urls)),
+    path('admin/', admin.site.urls)
 ]
+
+urlpatterns += i18n_patterns(
+    path('', include('main.urls'))
+)

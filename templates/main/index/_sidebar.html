@@ -1,12 +1,10 @@
-{% for row in side_categories %}
-    <h3 class="text-secondary text-center text-lg-left">{{ row }} menu</h3>
+{% for menu in sidebar_menu %}
+    <h3 class="text-secondary text-center text-lg-left">{{ menu.name }}</h3>
 
     <div class="sidebar-links">
-        <a href="#" class="text-primary d-block py-1">Menu 1</a>
-        <a href="#" class="text-primary d-block py-1">Menu 1</a>
-        <a href="#" class="text-primary d-block py-1">Menu 1</a>
-        <a href="#" class="text-primary d-block py-1">Menu 1</a>
-        <a href="#" class="text-primary d-block py-1">Menu 1</a>
+        {% for child in menu.children|slice:setting_sidebar_child_limit %}
+        <a href="#" class="text-primary d-block py-1">{{ child.name }}</a>
+        {% endfor %}
     </div>
 
     <a href="#" class="btn btn-secondary text-secondary d-block border-0 px-5 py-3 my-5">More categories
